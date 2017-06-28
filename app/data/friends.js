@@ -96,7 +96,7 @@ var friends = [
 		]
 	},
 	{
-		name: "Amber Garcia",
+		name: "Vanessa Gable",
 		photo: "",
 		scores: [
 				,
@@ -111,6 +111,55 @@ var friends = [
 
 		]
 	},
+	{
+		name: "Nicholas Nobriga",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	},
+	{
+		name: "Desirae Guerrero",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	},
+	{
+		name: "Lendell Ray",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	}
+
 ];
 
 
