@@ -128,7 +128,7 @@ var friends = [
 		]
 	},
 	{
-		name: "Desirae Guerrero",
+		name: "Shannon Cruz",
 		photo: "",
 		scores: [
 				,
