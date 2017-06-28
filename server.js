@@ -7,6 +7,7 @@ var bothParser = require ("body-parser");
 var app = express ();
 var PORT = 3000;
 
+// Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
@@ -17,5 +18,4 @@ require('/app/routing/htmlRoutes.js')(app);
 
 app.listen(Port, function () {
 	console.log("App listening on PORT: " + PORT)
-
 });
