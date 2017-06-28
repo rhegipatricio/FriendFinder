@@ -120,5 +120,20 @@ $("#submit").click(function(){
 	friendQuery(newFriend);
 });
 
+function friendQuery(newFriend){
+
+		$.ajax({url: currentURL + "/api/friends", method: "GET"})
+			.done(function(friendData) {
+				var compat = [];
+
+				for(i = 0; i < friendData.length; i++) {
+					var friendScore = friendData[i].scores;
+					var totalDif = 0;
+
+					console.log(friendData[i].name + ": " + friendScore);
+					console.log("Your Score: " + newFriend.scores);
+					var compare = [];
+
+					
 </body>
 </html>
