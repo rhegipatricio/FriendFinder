@@ -1,4 +1,37 @@
-var friends = {[]}
+var friends = [
+	{
+		name: "",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	},
+	{
+		name: "",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	}
+];
 
 
 
