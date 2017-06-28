@@ -71,6 +71,26 @@ var choices = [
 	"Strongly Disagree"
 ];
 
+var currentURL = window.location.origin;
+
+(function () {
+	for(i = 0; i < allQuestions.length; i++){
+		var questionHeader = $("<h3></h3>").text("Question " + (i + 1));
+		var question = $("<h4></h4>").text(allQuestions[i]);
+		answerChoices(i);
+
+
+
+
+
+	}
+
+
+
+
+
+		}
+
 
 </body>
 </html>
