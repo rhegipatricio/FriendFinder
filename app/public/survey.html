@@ -78,19 +78,39 @@ var currentURL = window.location.origin;
 		var questionHeader = $("<h3></h3>").text("Question " + (i + 1));
 		var question = $("<h4></h4>").text(allQuestions[i]);
 		answerChoices(i);
-
-
-
-
-
 	}
+})();
+
+function answerChoices(questionNum){
+	for(j = 0; j < 5; j++){
+		var divInput = "<div class='radio'><label><input type='radio' id='answ" + (questionNum + 1) + "' name='answ" + (questionNum + 1) + "' value='" + (j + 1) + "'>" + choices[j] + "</label></div>";
+		$("#questions").append(divInput);
+	}
+}
+
+$("#submit").click(function(){
+	var currentURL = window.location.origin;
+
+	var newFriend = {
+		name: $("#inputName").val().trim(),
+		photo: $("#inputPicURL").val().trim(),
+		scores: []
+	};
 
 
-
-
-
+		if(!newFriend.name){
+			alert("Please enter your name");
+			return;
 		}
 
+		if(!newFriend.photo){
+			alert("Please enter a URL for your photo");
+			return;
+		}
 
+		for(i = 0; i < allQuestions.length; i++){
+			if($("#answ" + (i + 1) + ":checked").val()){
+				newFriend.scores[i] = parseInt($("#answ" + (i + 1) + ":checked").val());
+		}
 </body>
 </html>
