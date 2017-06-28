@@ -111,6 +111,14 @@ $("#submit").click(function(){
 		for(i = 0; i < allQuestions.length; i++){
 			if($("#answ" + (i + 1) + ":checked").val()){
 				newFriend.scores[i] = parseInt($("#answ" + (i + 1) + ":checked").val());
+			}
+			else if (!$("#answ" + (i + 1) + ":checked").val()){
+				alert("Please answer all questions");
+				return;
+			}
 		}
+	friendQuery(newFriend);
+});
+
 </body>
 </html>
