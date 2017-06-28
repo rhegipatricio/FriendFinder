@@ -1,6 +1,6 @@
 var friends = [
 	{
-		name: "",
+		name: "Amber Garcia",
 		photo: "",
 		scores: [
 				,
@@ -16,7 +16,7 @@ var friends = [
 		]
 	},
 	{
-		name: "",
+		name: "Sam Newton",
 		photo: "",
 		scores: [
 				,
@@ -30,7 +30,87 @@ var friends = [
 				,
 
 		]
-	}
+	},
+	{
+		name: "Marisa Vela",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	},
+	{
+		name: "Ashley Garcia",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	},
+	{
+		name: "Rhiannon Sanders",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	},
+	{
+		name: "Cody Morgan",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	},
+	{
+		name: "Amber Garcia",
+		photo: "",
+		scores: [
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+				,
+
+		]
+	},
 ];
 
 
