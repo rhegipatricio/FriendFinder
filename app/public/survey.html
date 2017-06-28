@@ -134,6 +134,16 @@ function friendQuery(newFriend){
 					console.log("Your Score: " + newFriend.scores);
 					var compare = [];
 
-					
+					for(j = 0; j < 10; j++){
+						compare[j] = Math.abs(friendScore[j] - newFriend.scores[j]);
+						totalDif += compare[j];
+					}
+
+					console.log(friendData[i].name + " Compatibility: " + totalDif);
+					compat[i] = totalDif;
+
+				}
+
+				var bestMatch = 
 </body>
 </html>
