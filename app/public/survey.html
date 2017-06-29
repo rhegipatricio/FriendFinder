@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Drinking Buddies</title>
+	<title>Drinking Buddies - The Survey</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -21,7 +21,7 @@
 			</div>
 			<div class="page-header">
 			
-				<h2>About Yourself</h2>
+				<h3>About Yourself</h3>
 				<form id="formInfo" class="form-horizontal">
 					<div class="form-group">
 						<label for="inputName" class="col-sm-2 control-label">Name (REQUIRED)</label>
@@ -59,7 +59,7 @@ var allQuestions = [
 	"I tend to befriend strangers when I go out",
 	"Forget the bar. I'd rather go to a lounge",
 	"I tend to spend money I didn't plan on spending when I meet new people",
-	"Everyone should do what makes them happy",
+	"I can hold my liquor",
 	"Life moves on, so we should not have regrets"
 ];
 
@@ -75,7 +75,7 @@ var currentURL = window.location.origin;
 
 (function () {
 	for(i = 0; i < allQuestions.length; i++){
-		var questionHeader = $("<h3></h3>").text("Question " + (i + 1));
+		var quesHeader = $("<h3></h3>").text("Question " + (i + 1));
 		var question = $("<h4></h4>").text(allQuestions[i]);
 		answerChoices(i);
 	}
@@ -156,8 +156,20 @@ function friendQuery(newFriend){
 					}
 				}
 
-				console.log("Best Listener: " + bestMatch);
-				console.log("Best Friend: " + bestFriend);
+				console.log("Best Drinking Listener: " + bestMatch);
+				console.log("Best Drinking Friend: " + bestFriend);
+
+				$("#matchDisplay").append("<h4>" + bestFriend + "</h4><img src=" + friendImage + "width='700'>");
+				$("#friendModal").show();
+
+	$.post(currentURL + "/api/friends",
+			newFriend,
+			function(){
+
+			});
+		});
+
+	}
 
 </body>
 </html>
