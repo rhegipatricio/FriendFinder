@@ -147,5 +147,16 @@ function friendQuery(newFriend){
 				var bestMatch = compat[0];
 				var bestFriend = friendData[0].name;
 				var friendImage = friendData[0].photo;
+
+				for(i = 1; i < friendData.length; i++) {
+					if(compat[i] < bestMatch){
+						bestMatch = compat[i];
+						bestFriend = friendData[i].name;
+						friendImage = friendData[i].photo;
+					}
+
+				}
+
+				
 </body>
 </html>
