@@ -16,6 +16,7 @@
 </head>
 
 <style>
+/* Modal (hidden) */
 .modal {
 	display: none;
 	position: fixed;
@@ -26,6 +27,7 @@
 	background-color: rgb(0,0,0);
 	background-color: rgba(0,0,0,0.4);
 }
+
 </style>
 <body>
 	<div class="container">
@@ -104,14 +106,14 @@ var currentURL = window.location.origin;
 		answerChoices(i);
 	}
 })();
-
+//function that is called after a question has been populated; creates the answer choices for the user
 function answerChoices(questionNum){
 	for(j = 0; j < 5; j++){
 		var divInput = "<div class='radio'><label><input type='radio' id='answ" + (questionNum + 1) + "' name='answ" + (questionNum + 1) + "' value='" + (j + 1) + "'>" + choices[j] + "</label></div>";
 		$("#questions").append(divInput);
 	}
 }
-
+//when sumbit is clicked
 $("#submit").click(function(){
 	var currentURL = window.location.origin;
 
@@ -121,17 +123,17 @@ $("#submit").click(function(){
 		scores: []
 	};
 
-
+//checks to see if the user input their name
 		if(!newFriend.name){
 			alert("Please enter your name");
 			return;
 		}
-
+//checks to see if user has input a URL for their photo
 		if(!newFriend.photo){
 			alert("Please enter a URL for your photo");
 			return;
 		}
-
+//checks to see if questions have been answered
 		for(i = 0; i < allQuestions.length; i++){
 			if($("#answ" + (i + 1) + ":checked").val()){
 				newFriend.scores[i] = parseInt($("#answ" + (i + 1) + ":checked").val());
@@ -143,26 +145,32 @@ $("#submit").click(function(){
 		}
 	friendQuery(newFriend);
 });
-
+// function to check user compatability with each user in friend array.
+//Compares user's answers with preset friends
 function friendQuery(newFriend){
 
+		// GET info from friends API
 		$.ajax({url: currentURL + "/api/friends", method: "GET"})
 			.done(function(friendData) {
 				var compat = [];
 
+				// Cycles through friends already in array
 				for(i = 0; i < friendData.length; i++) {
 					var friendScore = friendData[i].scores;
 					var totalDif = 0;
 
+					//shows each friend's data in console
 					console.log(friendData[i].name + ": " + friendScore);
 					console.log("Your Score: " + newFriend.scores);
 					var compare = [];
 
+					//for loop to taking difference between each user
 					for(j = 0; j < 10; j++){
 						compare[j] = Math.abs(friendScore[j] - newFriend.scores[j]);
 						totalDif += compare[j];
 					}
 
+					//shows the complete difference between each friend
 					console.log(friendData[i].name + " Compatibility: " + totalDif);
 					compat[i] = totalDif;
 
@@ -171,7 +179,8 @@ function friendQuery(newFriend){
 				var bestMatch = compat[0];
 				var bestFriend = friendData[0].name;
 				var friendImage = friendData[0].photo;
-
+				//first friend in array is the best drinking listener
+				//other friend is the best person to drink with
 				for(i = 1; i < friendData.length; i++) {
 					if(compat[i] < bestMatch){
 						bestMatch = compat[i];
@@ -179,13 +188,14 @@ function friendQuery(newFriend){
 						friendImage = friendData[i].photo;
 					}
 				}
-
+				//Shows the lowest score and friend match
 				console.log("Best Drinking Listener: " + bestMatch);
 				console.log("Best Drinking Friend: " + bestFriend);
 
+				//Appends friend match into modal
 				$("#matchDisplay").append("<h4>" + bestFriend + "</h4><img src=" + friendImage + "width='700'>");
 				$("#friendModal").show();
-
+	// Posts user's data into friends API
 	$.post(currentURL + "/api/friends",
 			newFriend,
 			function(){
@@ -195,6 +205,7 @@ function friendQuery(newFriend){
 
 	}
 
+//clears modal when X is clicked. Exits and clears form
 $(".close").click(function(){
 	$("#matchDisplay").empty();
 	$("#friendModal").hide();

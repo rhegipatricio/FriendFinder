@@ -1,3 +1,4 @@
+//stores the friends already there and will add to when user logs in their information
 var friends = [
 	{
 		name: "Amber Garcia",
