@@ -1,10 +1,10 @@
 //These are the Dependencies
-var express = require ("express");
-var path = require ("path");
-var bodyParser = require ("body-parser");
+var express = require("express");
+var path = require("path");
+var bodyParser = require("body-parser");
 
 //Sets up the express app
-var app = express ();
+var app = express();
 var PORT = 3000;
 
 // Sets up the Express app to handle data parsing
