@@ -8,7 +8,7 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-
+	
 </head>
 
 <style>
@@ -22,6 +22,30 @@
 	overflow: auto;
 	background-color: rgb(0,0,0);
 	background-color: rgba(0,0,0,0.4);
+}
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 5px solid #78e6ff;
+    width: 80%;
+}
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#buttons {
+	text-align: center ;
 }
 
 </style>
@@ -53,27 +77,27 @@
 			<div id="friendModal" class="modal">
 				<div class="modal-content">
 					<span class="close">X</span>
-					<h3 id="matchTitle">You've made a match!</h3>
+					<h3 id="matchTitle">You've matched!</h3>
 					<div id="matchDisplay"></div>
 				</div>
 			</div>
 		
 		<!-- Div where questions populate -->
-		<div id="questions="></div>
+		<div id="questions"></div>
 
 	<!-- Buttons to Submit and Reset -->
-	<div id="buttons">
-		<button id="submit">Submit</button>
-		<button id="reset">Reset</button>
+		<div id="buttons">
+			<button id="submit">Submit</button>
+			<button id="reset">Reset</button>
+		</div>
 	</div>
-	</div>
-
+	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+	<script src="js/app.js"></script>
 
-
+	
 </body>
 </html>

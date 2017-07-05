@@ -1,3 +1,11 @@
+$.getJSON('/api/friends')
+
+.then(function(data) {
+	
+	console.log(data);
+
+});
+
 // Array for Questions
 var allQuestions = [
 	"I tend to repeat myself when I have a few drinks",
@@ -22,8 +30,7 @@ var choices = [
 ];
 
 var currentURL = window.location.origin;
-var questions = $('questions');
-
+var questions = $('#questions');
 // function that self invokes itself to populate 
 (function () {
 	for(i = 0; i < allQuestions.length; i++){
@@ -42,7 +49,7 @@ function answerChoices(questionNum){
 	}
 }
 //when sumbit is clicked
-$("#submit").click(function(e){
+$("#submit").click(function(e) {
 	e.preventDefault();
 	var currentURL = window.location.origin;
 
@@ -51,6 +58,7 @@ $("#submit").click(function(e){
 		photo: $("#inputPicURL").val().trim(),
 		scores: []
 	};
+
 
 //checks to see if the user input their name
 		if(!newFriend.name){
@@ -77,12 +85,10 @@ $("#submit").click(function(e){
 // function to check user compatability with each user in friend array.
 //Compares user's answers with preset friends
 function friendQuery(newFriend){
-
 		// GET info from friends API
 		$.ajax({url: currentURL + "/api/friends", method: "GET"})
 			.done(function(friendData) {
 				var compat = [];
-
 				// Cycles through friends already in array
 				for(i = 0; i < friendData.length; i++) {
 					var friendScore = friendData[i].scores;
@@ -122,7 +128,7 @@ function friendQuery(newFriend){
 				console.log("Best Drinking Friend: " + bestFriend);
 
 				//Appends friend match into modal
-				$("#matchDisplay").append('<h4>' + bestFriend + '</h4><img src="' + friendImage + '"width=700>"');
+				$("#matchDisplay").append('<h4>' + bestFriend + '</h4><img src="' + friendImage + '" width=700>"');
 				$("#friendModal").show();
 	// Posts user's data into friends API
 	$.post(currentURL + "/api/friends",
